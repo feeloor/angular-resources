@@ -1,6 +1,12 @@
 @import '~src/scss/variables.scss';
 
-.vote-buttons { margin-left: rem-calc(15px); }
+.vote-buttons {
+  margin-left: rem-calc(15px);
+
+  @include breakpoint(xs) {
+    margin-left: 0;
+  }
+}
 
 .vote {
   font-size: 36px;
@@ -12,12 +18,15 @@
     transition: .5s;
     box-shadow: 0 0 rem-calc(9px) rem-calc(1px) rgba(102, 102, 102, .25);
   }
+
   &.down {
     color: $text-red;
   }
+
   &.up {
     color: $text-green;
   }
+
   &.active {
     background: $grey;
   }
