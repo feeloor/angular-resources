@@ -1,0 +1,29 @@
+@import '~src/scss/variables.scss';
+
+.notification-item {
+  width: 100%;
+  padding: rem-calc(15px);
+  box-sizing: border-box;
+  margin: rem-calc(15px) 0;
+  transition: .5s;
+  color: $white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &.success {
+    background: $bg-success;
+  }
+
+  &.error {
+    background: $bg-error;
+  }
+
+  &.info {
+    background: $bg-info;
+  }
+
+  >.notification-close {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,24 @@
+@import '~src/scss/variables.scss';
+
+.vote-buttons { margin-left: rem-calc(15px); }
+
+.vote {
+  font-size: 36px;
+  width: rem-calc(36px);
+  height: rem-calc(36px);
+
+  &:hover {
+    cursor: pointer;
+    transition: .5s;
+    box-shadow: 0 0 rem-calc(9px) rem-calc(1px) rgba(102, 102, 102, .25);
+  }
+  &.down {
+    color: $text-red;
+  }
+  &.up {
+    color: $text-green;
+  }
+  &.active {
+    background: $grey;
+  }
+}

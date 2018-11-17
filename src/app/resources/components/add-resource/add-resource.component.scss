@@ -1,0 +1,14 @@
+@import '~src/scss/variables.scss';
+
+.add-resource-form {
+  h2 { padding-left: rem-calc(15px); }
+}
+
+mat-form-field {
+  flex-grow: 1;
+  padding: rem-calc(15px);
+}
+
+.submit-wrapper {
+  padding: rem-calc(15px);
+}

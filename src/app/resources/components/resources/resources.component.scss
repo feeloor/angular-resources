@@ -1,0 +1,78 @@
+@import '~src/scss/variables.scss';
+
+.resources-wrapper {
+  &>mat-card {
+    margin-top: rem-calc(15px);
+  }
+}
+
+.resources-table {
+  width: 100%;
+}
+
+.add-resource {
+  position: fixed;
+  bottom: rem-calc(30px);
+  right: rem-calc(30px);
+}
+
+.mat-header-cell {
+  text-transform: capitalize;
+}
+
+.level-cell,
+.type-cell {
+  @include breakpoint(xs) {
+    display: none;
+  }
+}
+
+tr.detail-row {
+  height: 0;
+}
+
+tr.resource-row:not(.expanded-row):hover {
+  cursor: pointer;
+  background: $table-row-hover;
+}
+
+tr.resource-row:not(.expanded-row):active {
+  background: $table-row-active;
+}
+
+.resource-row td {
+  border-bottom-width: 0;
+}
+
+.detail-wrapper {
+  width: 70%;
+
+  @include breakpoint(xs) {
+    width: 100%;
+  }
+}
+
+.detail {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: rem-calc(15px);
+
+  h4 {
+    margin: 0;
+  }
+
+  @include breakpoint(xs) {
+    padding: rem-calc(15px) 0;
+  }
+}
+
+.resource-type-level {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.resource-description {
+  margin-top: rem-calc(15px);
+}

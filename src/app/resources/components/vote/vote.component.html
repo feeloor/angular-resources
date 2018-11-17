@@ -1,0 +1,13 @@
+<span class="vote-buttons" *ngIf="!!user">
+  <mat-icon
+    class="vote up"
+    [ngClass]="{ 'active': hasVoted(user, resource, 'up') }"
+    (click)="vote(resource, 'up')">arrow_drop_up</mat-icon>
+  <mat-icon
+    class="vote down"
+    [ngClass]="{ 'active': hasVoted(user, resource, 'down') }"
+    (click)="vote(resource, 'down')">arrow_drop_down</mat-icon>
+</span>
+<span class="vote-buttons" *ngIf="!user">
+  <button mat-button (click)="signIn()">Sign in with Github to vote</button>
+</span>

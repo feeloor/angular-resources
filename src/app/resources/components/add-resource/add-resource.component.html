@@ -1,0 +1,50 @@
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()" class="add-resource-form">
+  <h2>Add a new Resource</h2>
+
+  <div class="flex flex-row flex-column-mobile">
+    <!-- Name -->
+    <mat-form-field>
+      <input matInput placeholder="Name of Resource" formControlName="name" required>
+      <mat-error *ngIf="addForm.get('name').invalid">Please enter a valid name</mat-error>
+    </mat-form-field>
+
+    <!-- Link -->
+    <mat-form-field>
+      <input matInput placeholder="Link to Resource" formControlName="link" required>
+      <mat-error *ngIf="addForm.get('link').invalid">Please enter a valid link</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="flex flex-row">
+    <!-- Description -->
+    <mat-form-field>
+      <textarea matInput placeholder="Description of Resource" formControlName="description" required></textarea>
+      <mat-error *ngIf="addForm.get('description').invalid">Please enter a description</mat-error>
+    </mat-form-field>
+  </div>
+
+
+  <div class="flex flex-row flex-column-mobile">
+    <!-- Type -->
+    <mat-form-field>
+      <mat-select placeholder="Type of Resource" formControlName="type" required>
+        <mat-option *ngFor="let type of types" [value]="type.id">{{type.name}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="addForm.get('type').invalid">Please enter a type</mat-error>
+    </mat-form-field>
+
+    <!-- Level -->
+    <mat-form-field>
+      <mat-select placeholder="Level of Resource" formControlName="level" required>
+        <mat-option *ngFor="let level of levels" [value]="level.id">{{level.name}}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="addForm.get('level').invalid">Please enter a level</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="flex flex-row submit-wrapper">
+    <button mat-raised-button type="submit" [disabled]="!addForm.valid">Submit</button>
+  </div>
+</form>
+
+<app-loading *ngIf="isLoading"></app-loading>

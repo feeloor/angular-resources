@@ -1,0 +1,13 @@
+@import '~src/scss/variables.scss';
+
+.notifications {
+  position: fixed;
+  top: rem-calc(66px);
+  right: 0;
+  height: 100%;
+  width: rem-calc(300px);
+
+  @include breakpoint(xs) {
+    width: 100%;
+  }
+}

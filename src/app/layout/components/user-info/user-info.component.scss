@@ -1,0 +1,20 @@
+@import '~src/scss/variables.scss';
+
+.header-user-info {
+  position: fixed;
+  top: 0;
+  right: rem-calc(30px);
+  z-index: 1;
+
+  padding: rem-calc(15px);
+  background: $light-black;
+  color: $light-grey;
+  cursor: pointer;
+  transition: .5s;
+
+  @include breakpoint(xs) {
+    right: 0;
+    width: 100%;
+    text-align: right;
+  }
+}

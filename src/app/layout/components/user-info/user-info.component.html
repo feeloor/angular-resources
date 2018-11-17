@@ -1,0 +1,4 @@
+<div class="header-user-info" *ngIf="!!user">
+  {{ user.displayName ? user.displayName : user.email }}
+  <button mat-button (click)="signOut()">Sign out</button>
+</div>

@@ -1,0 +1,34 @@
+@import 'functions.scss';
+
+@mixin base-gradient() {
+  background: rgba(255,93,177,1);
+  background: -moz-linear-gradient(45deg, rgba(255,93,177,1) 0%, rgba(177,50,250,1) 55%, rgba(177,50,250,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,93,177,1)), color-stop(55%, rgba(177,50,250,1)), color-stop(100%, rgba(177,50,250,1)));
+  background: -webkit-linear-gradient(45deg, rgba(255,93,177,1) 0%, rgba(177,50,250,1) 55%, rgba(177,50,250,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(255,93,177,1) 0%, rgba(177,50,250,1) 55%, rgba(177,50,250,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(255,93,177,1) 0%, rgba(177,50,250,1) 55%, rgba(177,50,250,1) 100%);
+  background: linear-gradient(45deg, rgba(255,93,177,1) 0%, rgba(177,50,250,1) 55%, rgba(177,50,250,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff5db1', endColorstr='#b132fa', GradientType=1 );
+}
+
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: 767px) { @content; }
+  }
+
+  @else if $class == sm {
+    @media (min-width: 768px) { @content; }
+  }
+
+  @else if $class == md {
+    @media (min-width: 992px) { @content; }
+  }
+
+  @else if $class == lg {
+    @media (min-width: 1200px) { @content; }
+  }
+
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg";
+  }
+}

@@ -1,0 +1,44 @@
+@import '~src/scss/variables';
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: $light-grey;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .9px;
+  font-weight: 400;
+}
+
+/* Override Material Design Dialog */
+mat-dialog-container {
+  border-top: rem-calc(5px) solid $dialog-border-color;
+  transition: .5s;
+  @include breakpoint(xs) {
+    width: 100%;
+  }
+}
+.cdk-overlay-pane {
+  transition: .5s;
+  @include breakpoint(xs) {
+    width: 100% !important; // To override inline style added automatically
+    padding: 15px;
+  }
+}
+
+/* Flex classes */
+.flex { display: flex; }
+.flex-row { flex-direction: row; }
+.flex-row-mobile {
+  @include breakpoint(xs) { flex-direction: row; }
+}
+.flex-column { flex-direction: column; }
+.flex-column-mobile {
+  @include breakpoint(xs) { flex-direction: column; }
+}

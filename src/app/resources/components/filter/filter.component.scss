@@ -1,0 +1,40 @@
+@import '~src/scss/variables.scss';
+
+.filter {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+
+  &>li {
+    display: inline-block;
+    margin-left: rem-calc(5px);
+    transition: .3s;
+
+    &.active {
+      color: $active-color;
+    }
+
+    &:not(:last-of-type) {
+      &:after {
+        color: initial;
+        content: "\25CF";
+        margin-left: rem-calc(10px);
+        margin-right: rem-calc(10px);
+      }
+    }
+
+    &:hover {
+      color: $active-color;
+    }
+  }
+}
+
+.filter-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .filter-item {
+    width: 100%;
+    padding: 0 rem-calc(15px);
+  }
+}

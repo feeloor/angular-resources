@@ -1,0 +1,7 @@
+@import '~src/scss/variables.scss';
+
+.content {
+  padding: rem-calc(15px);
+  max-width: rem-calc(1040px);
+  margin: auto;
+}

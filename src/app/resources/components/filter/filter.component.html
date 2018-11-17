@@ -1,0 +1,13 @@
+<mat-card class="filter-wrapper">
+  <div class="filter-item">
+    <mat-select (valueChange)="filterByType($event)" placeholder="Resource Type">
+      <mat-option *ngFor="let filter of typeFilters" [value]="filter.id">{{ filter.name }}</mat-option>
+    </mat-select>
+  </div>
+
+  <div class="filter-item">
+    <mat-select (valueChange)="filterByLevel($event)" placeholder="Resource Level">
+      <mat-option *ngFor="let filter of levelFilters" [value]="filter.id">{{ filter.name }}</mat-option>
+    </mat-select>
+  </div>
+</mat-card>
