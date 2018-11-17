@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService, User } from '@app/core';
 import { Subscription } from 'rxjs';
 
@@ -7,26 +7,14 @@ import { Subscription } from 'rxjs';
   templateUrl: './user-info.component.html',
   styleUrls: ['./user-info.component.scss']
 })
-export class UserInfoComponent implements OnInit, OnDestroy {
-  user: User;
-  subscriptions: Subscription[] = [];
+export class UserInfoComponent implements OnInit {
+  @Input() user: User;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit() {
-    const authSub = this.authService.user.subscribe((user) => this.user = user);
-    this.subscriptions.push(authSub);
-  }
+  ngOnInit() {}
 
   signOut() {
     this.authService.signOut();
-  }
-
-  ngOnDestroy() {
-    for (const sub of this.subscriptions) {
-      if (sub && sub.unsubscribe) {
-        sub.unsubscribe();
-      }
-    }
   }
 }

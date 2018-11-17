@@ -1,9 +1,9 @@
 <header>
-  <app-user-info></app-user-info>
+  <app-user-info [user]="user"></app-user-info>
   <div class="header">
-      <div class="header-gradient-overlay"></div>
+    <div class="header-gradient-overlay"></div>
   </div>
-  <div class="header-text">
+  <div class="header-text" [ngClass]="{'logged-in': !!user }">
     <h1 class="header-h1">Angular Resources</h1>
     <p>The best and mostly used resources for learning and using Angular</p>
   </div>
