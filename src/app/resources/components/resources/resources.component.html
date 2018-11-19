@@ -1,4 +1,8 @@
 <div class="resources-wrapper">
+  <mat-card *ngIf="!user" class="login-instructions">
+    You have to sign in through GitHub to add or vote on a resource.
+  </mat-card>
+
   <app-filter></app-filter>
 
   <mat-card>
