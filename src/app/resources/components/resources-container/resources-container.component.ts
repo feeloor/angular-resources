@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Resource } from '@app/resources/models';
 import { Observable } from 'rxjs';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import {
   RootStoreState,
   ResourceSelectors,
@@ -25,12 +25,12 @@ export class ResourcesContainerComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.resources$ = this.store$.select(
-      ResourceSelectors.ResourceSelectors.selectAllResources
+    this.resources$ = this.store$.pipe(
+      select(ResourceSelectors.ResourceSelectors.selectAllResources)
     );
 
-    this.isLoading$ = this.store$.select(
-      ResourceSelectors.ResourceSelectors.selectResourceIsLoading
+    this.isLoading$ = this.store$.pipe(
+      select(ResourceSelectors.ResourceSelectors.selectResourceIsLoading)
     );
 
     this.store$.dispatch(

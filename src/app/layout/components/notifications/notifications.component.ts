@@ -4,7 +4,7 @@ import {
   NotificationStoreSelectors,
   NotificationStoreActions
 } from '@app/root-store';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Notification, NotificationType } from '@app/core';
 
@@ -20,8 +20,8 @@ export class NotificationsComponent implements OnInit {
   constructor(private store$: Store<RootStoreState.State>) {}
 
   ngOnInit() {
-    this.notifications$ = this.store$.select(
-      NotificationStoreSelectors.selectAllNotifications
+    this.notifications$ = this.store$.pipe(
+      select(NotificationStoreSelectors.selectAllNotifications)
     );
   }
 

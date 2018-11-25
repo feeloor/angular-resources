@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { Observable, of, from } from 'rxjs';
-import { Action, Store } from '@ngrx/store';
+import { Action, Store, select } from '@ngrx/store';
 import * as ResourceActions from '../actions';
 import {
   map,
@@ -168,7 +168,7 @@ export class ResourceEffects {
     ofType<ResourceActions.ResourceCollectionActions.LoadResourcesAction>(
       ResourceActions.ResourceCollectionActions.ActionTypes.LOAD_RESOURCES
     ),
-    withLatestFrom(this.store$.select(FilterSelectors.selectFilter)),
+    withLatestFrom(this.store$.pipe(select(FilterSelectors.selectFilter))),
     switchMap(([action, filter]) =>
       this.db
         .collection('resources', ref => {
