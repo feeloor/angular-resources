@@ -41,7 +41,7 @@ jobs:
       # Run tests
       - run:
           name: Testing the code
-          command: yarn test
+          command: yarn test --watch=false
       # Build project with different configuration based on
       # the current branch
       - run:
