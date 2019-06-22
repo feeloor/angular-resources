@@ -1,9 +1,9 @@
-import { ResourceType, ResourceLevel, Resource } from './../../models';
-import { Component, OnInit, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ResourceActions, RootStoreState } from '@app/root-store';
 import { Store } from '@ngrx/store';
-import { RootStoreState, ResourceActions } from '@app/root-store';
+import { Resource, ResourceLevel, ResourceType } from './../../models';
 
 @Component({
   selector: 'app-add-resource',
@@ -34,9 +34,9 @@ export class AddResourceComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data,
     private fb: FormBuilder,
     private store$: Store<RootStoreState.State>
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   async onSubmit() {
     this.isLoading = true;

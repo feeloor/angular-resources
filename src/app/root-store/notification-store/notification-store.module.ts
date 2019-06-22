@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
-import { featureReducer } from './reducer';
+import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { NotificationEffects } from './effects';
+import { featureReducer } from './reducer';
 
 @NgModule({
   imports: [
@@ -13,4 +13,4 @@ import { NotificationEffects } from './effects';
   ],
   declarations: []
 })
-export class NotificationStoreModule {}
+export class NotificationStoreModule { }

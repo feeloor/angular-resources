@@ -1,9 +1,9 @@
-import { ResourcesState } from '../states';
 import {
   createFeatureSelector,
-  MemoizedSelector,
-  createSelector
+  createSelector,
+  MemoizedSelector
 } from '@ngrx/store';
+import { ResourcesState } from '../states';
 import { featureAdapter } from '../states/resource.state';
 
 export const getError = (state: ResourcesState) => state.resources.error;

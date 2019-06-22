@@ -1,10 +1,10 @@
-import { ResourcesState } from '../states';
-import {
-  createSelector,
-  MemoizedSelector,
-  createFeatureSelector
-} from '@ngrx/store';
 import { Filter } from '@app/resources/models';
+import {
+  createFeatureSelector,
+  createSelector,
+  MemoizedSelector
+} from '@ngrx/store';
+import { ResourcesState } from '../states';
 
 export const selectResourceState: MemoizedSelector<
   object,

@@ -1,12 +1,12 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import {
-  RootStoreState,
-  NotificationStoreSelectors,
-  NotificationStoreActions
-} from '@app/root-store';
-import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Notification, NotificationType } from '@app/core';
+import {
+  NotificationStoreActions,
+  NotificationStoreSelectors,
+  RootStoreState
+} from '@app/root-store';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-notifications',
@@ -17,7 +17,7 @@ import { Notification, NotificationType } from '@app/core';
 export class NotificationsComponent implements OnInit {
   notifications$: Observable<Notification[]>;
 
-  constructor(private store$: Store<RootStoreState.State>) {}
+  constructor(private store$: Store<RootStoreState.State>) { }
 
   ngOnInit() {
     this.notifications$ = this.store$.pipe(

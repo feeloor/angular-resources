@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { AddNotification } from '@app/root-store/notification-store/actions';
 import * as RootStoreState from '@app/root-store/root-state';
-import { NotificationType, Notification } from '../models';
+import { Store } from '@ngrx/store';
+import { Notification, NotificationType } from '../models';
 
 let notificationId = 1;
 
@@ -10,7 +10,7 @@ let notificationId = 1;
   providedIn: 'root'
 })
 export class NotificationService {
-  constructor(private store$: Store<RootStoreState.State>) {}
+  constructor(private store$: Store<RootStoreState.State>) { }
 
   notify(msg: string, type: 'success' | 'error' | 'info'): void {
     const newNotification = <Notification>{

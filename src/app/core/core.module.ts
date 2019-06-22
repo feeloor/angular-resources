@@ -9,4 +9,4 @@ import { NotificationService } from './notification';
     LoggingService, NotificationService
   ]
 })
-export class CoreModule {}
+export class CoreModule { }

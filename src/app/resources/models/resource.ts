@@ -1,7 +1,7 @@
-import { VoteType } from './vote-type';
-import { ResourceType } from './resource-type';
 import { ResourceLevel } from './resource-level';
+import { ResourceType } from './resource-type';
 import { Vote } from './vote';
+import { VoteType } from './vote-type';
 
 export class Resource {
   id?: string;

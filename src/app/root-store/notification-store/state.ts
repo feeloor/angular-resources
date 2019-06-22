@@ -1,5 +1,5 @@
-import { createEntityAdapter, EntityState, EntityAdapter } from '@ngrx/entity';
 import { Notification } from '@app/core';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 export const featureAdapter: EntityAdapter<Notification> = createEntityAdapter<
   Notification
@@ -8,6 +8,6 @@ export const featureAdapter: EntityAdapter<Notification> = createEntityAdapter<
   sortComparer: false
 });
 
-export interface State extends EntityState<Notification> {}
+export interface State extends EntityState<Notification> { }
 
 export const initialState: State = featureAdapter.getInitialState();

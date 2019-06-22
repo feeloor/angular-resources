@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from './material.module';
-import { LoadingComponent } from './components';
-import { CapitalizeFirst } from './pipes';
+import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoadingComponent } from './components';
+import { MaterialModule } from './material.module';
+import { CapitalizeFirst } from './pipes';
 
 @NgModule({
   imports: [

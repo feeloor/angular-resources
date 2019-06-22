@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService, User } from '@app/core';
 import { Resource } from '@app/resources/models';
-import { Observable } from 'rxjs';
-import { Store, select } from '@ngrx/store';
 import {
-  RootStoreState,
+  ResourceActions,
   ResourceSelectors,
-  ResourceActions
+  RootStoreState
 } from '@app/root-store';
-import { User, AuthService } from '@app/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-resources-container',
@@ -22,7 +22,7 @@ export class ResourcesContainerComponent implements OnInit {
   constructor(
     private store$: Store<RootStoreState.State>,
     private authService: AuthService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.resources$ = this.store$.pipe(

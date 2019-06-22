@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { Effect, Actions, ofType } from '@ngrx/effects';
-import { Observable, of, from } from 'rxjs';
-import { Action, Store, select } from '@ngrx/store';
-import * as ResourceActions from '../actions';
+import { LoggingService, NotificationService } from '@app/core';
+import { Resource, ResourceLevel, ResourceType } from '@app/resources/models';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Action, select, Store } from '@ngrx/store';
+import { from, Observable, of } from 'rxjs';
 import {
-  map,
-  switchMap,
   catchError,
-  withLatestFrom,
-  mergeMap
+  map,
+  mergeMap,
+  switchMap,
+  withLatestFrom
 } from 'rxjs/operators';
-import { Resource, ResourceType, ResourceLevel } from '@app/resources/models';
-import { FilterSelectors } from '../selectors';
 import * as RootStoreState from '../../root-state';
-import { NotificationService, LoggingService } from '@app/core';
+import * as ResourceActions from '../actions';
+import { FilterSelectors } from '../selectors';
 
 @Injectable()
 export class ResourceEffects {
@@ -24,7 +24,7 @@ export class ResourceEffects {
     private store$: Store<RootStoreState.State>,
     private notificationService: NotificationService,
     private loggingService: LoggingService
-  ) {}
+  ) { }
 
   /**
    * Vote resource

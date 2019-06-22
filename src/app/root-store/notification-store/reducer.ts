@@ -1,5 +1,5 @@
 import { Actions, ActionTypes } from './actions';
-import { initialState, State, featureAdapter } from './state';
+import { featureAdapter, initialState, State } from './state';
 
 export function featureReducer(state = initialState, action: Actions): State {
   switch (action.type) {

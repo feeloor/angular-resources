@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +8,5 @@ import { Router, RouterEvent, NavigationStart, NavigationEnd, NavigationCancel, 
 export class RootComponent implements OnInit {
   constructor() { }
 
-  ngOnInit() {}
-
+  ngOnInit() { }
 }

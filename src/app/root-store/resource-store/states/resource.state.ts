@@ -1,5 +1,5 @@
-import { createEntityAdapter, EntityState, EntityAdapter } from '@ngrx/entity';
 import { Resource } from '@app/resources/models';
+import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 export const featureAdapter: EntityAdapter<Resource> = createEntityAdapter<
   Resource

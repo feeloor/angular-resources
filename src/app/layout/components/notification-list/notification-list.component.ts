@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { RootStoreState, NotificationStoreActions } from '@app/root-store';
-import { Store } from '@ngrx/store';
 import { NotificationType } from '@app/core';
+import { NotificationStoreActions, RootStoreState } from '@app/root-store';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-notification-list',
@@ -12,7 +12,7 @@ export class NotificationListComponent {
   @Input()
   notifications: Notification[];
 
-  constructor(private store$: Store<RootStoreState.State>) {}
+  constructor(private store$: Store<RootStoreState.State>) { }
 
   getClassFromType(type: NotificationType): string {
     return NotificationType[type].toLowerCase();

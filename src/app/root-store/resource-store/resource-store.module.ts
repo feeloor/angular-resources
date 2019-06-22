@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StoreModule } from '@ngrx/store';
-import { reducers } from './reducers';
+import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 import { ResourceEffects } from './effects';
+import { reducers } from './reducers';
 
 @NgModule({
   imports: [
@@ -13,4 +13,4 @@ import { ResourceEffects } from './effects';
   ],
   declarations: []
 })
-export class ResourceStoreModule {}
+export class ResourceStoreModule { }

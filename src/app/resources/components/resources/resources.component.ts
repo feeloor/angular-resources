@@ -1,20 +1,20 @@
 import {
-  Component,
-  OnInit,
-  Input,
-  ChangeDetectionStrategy
-} from '@angular/core';
-import { Resource } from '@app/resources/models';
-import { User } from '@app/core';
-import { AddResourceComponent } from '../add-resource/add-resource.component';
-import { MatDialog } from '@angular/material';
-import {
-  transition,
+  animate,
   state,
-  trigger,
   style,
-  animate
+  transition,
+  trigger
 } from '@angular/animations';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit
+} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { User } from '@app/core';
+import { Resource } from '@app/resources/models';
+import { AddResourceComponent } from '../add-resource/add-resource.component';
 
 @Component({
   selector: 'app-resources',
@@ -45,9 +45,9 @@ export class ResourcesComponent implements OnInit {
 
   displayedColumns: string[] = ['name', 'type', 'level', 'votes', 'vote'];
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   openAddDialog(): void {
     this.dialog.open(AddResourceComponent, {

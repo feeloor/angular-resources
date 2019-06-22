@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { NotificationStoreModule } from './notification-store';
-import { EffectsModule } from '@ngrx/effects';
 import { ResourceStoreModule } from './resource-store';
 
 @NgModule({
@@ -15,4 +15,4 @@ import { ResourceStoreModule } from './resource-store';
   ],
   declarations: []
 })
-export class RootStoreModule {}
+export class RootStoreModule { }

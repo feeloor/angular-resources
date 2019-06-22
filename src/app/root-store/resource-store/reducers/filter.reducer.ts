@@ -1,6 +1,6 @@
+import { Filter } from '@app/resources/models';
 import { Actions, ActionTypes } from '../actions/filter.actions';
 import { initialState } from '../states/filter.state';
-import { Filter } from '@app/resources/models';
 
 export function reducer(state = initialState, action: Actions): Filter {
   switch (action.type) {

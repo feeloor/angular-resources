@@ -1,14 +1,15 @@
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
 import { Injectable } from '@angular/core';
-import { Observable, from, of } from 'rxjs';
-import { map, switchMap } from 'rxjs/operators';
-import { LoggingService } from '../logging';
-import { NotificationService } from '../notification';
+import { AngularFireAuth } from '@angular/fire/auth';
 import {
   AngularFirestore,
   AngularFirestoreDocument
 } from '@angular/fire/firestore';
+import { auth } from 'firebase/app';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
+import { LoggingService } from '../logging';
+import { NotificationService } from '../notification';
 
 export interface User {
   uid: string;

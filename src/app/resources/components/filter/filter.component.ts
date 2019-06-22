@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ResourceType, ResourceLevel } from '@app/resources/models';
-import { RootStoreState, ResourceActions } from '@app/root-store';
+import { ResourceLevel, ResourceType } from '@app/resources/models';
+import { ResourceActions, RootStoreState } from '@app/root-store';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -18,9 +18,9 @@ export class FilterComponent implements OnInit {
     .sort()
     .map(key => ({ id: key, name: ResourceLevel[key] }));
 
-  constructor(private store$: Store<RootStoreState.State>) {}
+  constructor(private store$: Store<RootStoreState.State>) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   filterByType(type: ResourceType): void {
     this.store$.dispatch(

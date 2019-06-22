@@ -1,5 +1,5 @@
-import { Action } from '@ngrx/store';
 import { Resource, Vote } from '@app/resources/models';
+import { Action } from '@ngrx/store';
 
 export enum ActionTypes {
   LOAD_RESOURCES = '[Resources] Load',
@@ -19,17 +19,17 @@ export class LoadResourcesAction implements Action {
 
 export class LoadSuccessAction implements Action {
   readonly type = ActionTypes.LOAD_SUCCESS;
-  constructor(public payload: { resources: Resource[] }) {}
+  constructor(public payload: { resources: Resource[] }) { }
 }
 
 export class LoadFailureAction implements Action {
   readonly type = ActionTypes.LOAD_FAILURE;
-  constructor(public payload: { error: string }) {}
+  constructor(public payload: { error: string }) { }
 }
 
 export class AddResourceAction implements Action {
   readonly type = ActionTypes.ADD_RESOURCE;
-  constructor(public payload: { resource: Partial<Resource> }) {}
+  constructor(public payload: { resource: Partial<Resource> }) { }
 }
 
 export class AddSuccessAction implements Action {
@@ -38,12 +38,12 @@ export class AddSuccessAction implements Action {
 
 export class AddFailureAction implements Action {
   readonly type = ActionTypes.ADD_FAILURE;
-  constructor(public payload: { error: string }) {}
+  constructor(public payload: { error: string }) { }
 }
 
 export class VoteResourceAction implements Action {
   readonly type = ActionTypes.VOTE_RESOURCE;
-  constructor(public payload: { resourceId: string; allVotes: Vote[] }) {}
+  constructor(public payload: { resourceId: string; allVotes: Vote[] }) { }
 }
 
 export class VoteSuccessAction implements Action {
@@ -51,7 +51,7 @@ export class VoteSuccessAction implements Action {
 }
 export class VoteFailureAction implements Action {
   readonly type = ActionTypes.VOTE_FAILURE;
-  constructor(public payload: { error: string }) {}
+  constructor(public payload: { error: string }) { }
 }
 
 export type Actions =

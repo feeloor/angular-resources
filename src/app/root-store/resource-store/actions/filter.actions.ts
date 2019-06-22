@@ -1,5 +1,5 @@
+import { Filter, ResourceLevel, ResourceType } from '@app/resources/models';
 import { Action } from '@ngrx/store';
-import { Filter, ResourceType, ResourceLevel } from '@app/resources/models';
 
 export enum ActionTypes {
   LOAD_FILTER = '[Resources] Filter - Load',
@@ -14,16 +14,16 @@ export class LoadFilterAction implements Action {
 
 export class UpdateFilterAction implements Action {
   readonly type = ActionTypes.UPDATE_FILTER;
-  constructor(public payload: Filter) {}
+  constructor(public payload: Filter) { }
 }
 
 export class UpdateFilterTypeAction implements Action {
   readonly type = ActionTypes.UPDATE_FILTER_TYPE;
-  constructor(public payload: ResourceType) {}
+  constructor(public payload: ResourceType) { }
 }
 export class UpdateFilterLevelAction implements Action {
   readonly type = ActionTypes.UPDATE_FILTER_LEVEL;
-  constructor(public payload: ResourceLevel) {}
+  constructor(public payload: ResourceLevel) { }
 }
 
 export type Actions =

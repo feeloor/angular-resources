@@ -1,13 +1,13 @@
-import { Resource, Vote, VoteType } from '../../models';
 import {
+  ChangeDetectionStrategy,
   Component,
-  OnInit,
   Input,
-  ChangeDetectionStrategy
+  OnInit
 } from '@angular/core';
-import { User, AuthService } from '@app/core';
+import { AuthService, User } from '@app/core';
+import { ResourceActions, RootStoreState } from '@app/root-store';
 import { Store } from '@ngrx/store';
-import { RootStoreState, ResourceActions } from '@app/root-store';
+import { Resource, Vote, VoteType } from '../../models';
 
 @Component({
   selector: 'app-vote',
@@ -24,9 +24,9 @@ export class VoteComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private store$: Store<RootStoreState.State>
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   async vote(resource: Resource, vote: 'up' | 'down') {
     if (!this.user) {

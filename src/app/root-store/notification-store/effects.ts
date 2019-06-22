@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Observable, timer } from 'rxjs';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
-import { Effect, Actions, ofType } from '@ngrx/effects';
+import { Observable, timer } from 'rxjs';
+import { map, switchMap } from 'rxjs/operators';
 import { ActionTypes, RemoveNotification } from './actions';
-import { switchMap, map } from 'rxjs/operators';
 
 @Injectable()
 export class NotificationEffects {
@@ -17,5 +17,5 @@ export class NotificationEffects {
     )
   );
 
-  constructor(private actions$: Actions) {}
+  constructor(private actions$: Actions) { }
 }

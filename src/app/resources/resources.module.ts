@@ -1,15 +1,15 @@
-import { ResourceTypePipe, ResourceLevelPipe } from './pipes';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared/shared.module';
+import { ResourceLevelPipe, ResourceTypePipe } from './pipes';
 
-import { ResourcesRoutingModule } from './resources-routing.module';
 import {
-  ResourcesComponent,
-  VoteComponent,
   AddResourceComponent,
   FilterComponent,
-  ResourcesContainerComponent
+  ResourcesComponent,
+  ResourcesContainerComponent,
+  VoteComponent
 } from './components';
+import { ResourcesRoutingModule } from './resources-routing.module';
 
 @NgModule({
   imports: [SharedModule, ResourcesRoutingModule],
@@ -24,4 +24,4 @@ import {
   ],
   entryComponents: [AddResourceComponent]
 })
-export class ResourcesModule {}
+export class ResourcesModule { }
